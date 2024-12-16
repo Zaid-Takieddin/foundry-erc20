@@ -47,10 +47,7 @@ contract OurTokenTest is StdCheats, Test {
         ourToken.transfer(user1, amount);
 
         assertEq(ourToken.balanceOf(user1), amount);
-        assertEq(
-            ourToken.balanceOf(msg.sender),
-            deployer.INITIAL_SUPPLY() - amount
-        );
+        assertEq(ourToken.balanceOf(msg.sender), deployer.INITIAL_SUPPLY() - amount);
     }
 
     function testTransferFrom() public {
